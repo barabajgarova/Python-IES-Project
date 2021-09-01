@@ -43,3 +43,10 @@ def get_general_daily_stats():
     a = r.json()
     df = pd.DataFrame(a['data']).set_index('datum')
     return df
+
+def get_gender_vacc():
+    r = requests.get('https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/ockovani-demografie.json?fbclid=IwAR00XSCsNtt73ZqD7OxULiAwp6H6DoaeHjrC22O7oG3Kpvi37a4TKWam1KE')
+    a = r.json()
+    df = pd.DataFrame(a['data']).set_index('datum')
+    return df
+    
